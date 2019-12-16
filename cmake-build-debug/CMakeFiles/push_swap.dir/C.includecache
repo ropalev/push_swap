@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/lvania/42/push_swap/additional_command.c
+push_swap.h
+/Users/lvania/42/push_swap/push_swap.h
+
+/Users/lvania/42/push_swap/libft/libft.h
+stdlib.h
+-
+string.h
+-
+unistd.h
+-
+
+/Users/lvania/42/push_swap/push_swap.h
+stdarg.h
+-
+libft/libft.h
+/Users/lvania/42/push_swap/libft/libft.h
+stdlib.h
+-
+unistd.h
+-
+stdio.h
+-
+
