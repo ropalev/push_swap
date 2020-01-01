@@ -80,4 +80,4 @@ add_executable(push_swap
         main.c
         push_swap.h
         stack_function.c
-        stupid_algo.c additional_function.c)
+        stupid_algo.c additional_function.c smart_algo.c sort_func.c parser.c checker.c checker.h)

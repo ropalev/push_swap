@@ -90,6 +90,12 @@
 		<Unit filename="/Users/lvania/42/push_swap/additional_function.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/lvania/42/push_swap/checker.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/lvania/42/push_swap/checker.h">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/lvania/42/push_swap/command_push.c">
 			<Option target="push_swap"/>
 		</Unit>
@@ -300,7 +306,16 @@
 		<Unit filename="/Users/lvania/42/push_swap/main.c">
 			<Option target="push_swap"/>
 		</Unit>
+		<Unit filename="/Users/lvania/42/push_swap/parser.c">
+			<Option target="push_swap"/>
+		</Unit>
 		<Unit filename="/Users/lvania/42/push_swap/push_swap.h">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/lvania/42/push_swap/smart_algo.c">
+			<Option target="push_swap"/>
+		</Unit>
+		<Unit filename="/Users/lvania/42/push_swap/sort_func.c">
 			<Option target="push_swap"/>
 		</Unit>
 		<Unit filename="/Users/lvania/42/push_swap/stack_function.c">

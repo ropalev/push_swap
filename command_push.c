@@ -9,7 +9,7 @@ void    command_pa(int *stack_a, int *stack_b)
     shift_up(stack_b);
     stack_a[0] += 1;
     stack_b[0] -= 1;
-    write(1, "pa\n", 3);
+    //write(1, "pa\n", 3);
 }
 
 void    command_pb(int *stack_a, int *stack_b)
@@ -21,5 +21,5 @@ void    command_pb(int *stack_a, int *stack_b)
     shift_up(stack_a);
     stack_a[0] -= 1;
     stack_b[0] += 1;
-    write(1, "pa\n", 3);
+    //write(1, "pb\n", 3);
 }

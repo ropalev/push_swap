@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/Users/lvania/42/push_swap/additional_command.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/additional_command.c.o"
   "/Users/lvania/42/push_swap/additional_function.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/additional_function.c.o"
+  "/Users/lvania/42/push_swap/checker.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/checker.c.o"
   "/Users/lvania/42/push_swap/command_push.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/command_push.c.o"
   "/Users/lvania/42/push_swap/command_rotate.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/command_rotate.c.o"
   "/Users/lvania/42/push_swap/command_rotate_rev.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/command_rotate_rev.c.o"
@@ -75,6 +76,9 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/lvania/42/push_swap/libft/ft_tolower.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/ft_tolower.c.o"
   "/Users/lvania/42/push_swap/libft/ft_toupper.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/libft/ft_toupper.c.o"
   "/Users/lvania/42/push_swap/main.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/main.c.o"
+  "/Users/lvania/42/push_swap/parser.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/parser.c.o"
+  "/Users/lvania/42/push_swap/smart_algo.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/smart_algo.c.o"
+  "/Users/lvania/42/push_swap/sort_func.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/sort_func.c.o"
   "/Users/lvania/42/push_swap/stack_function.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/stack_function.c.o"
   "/Users/lvania/42/push_swap/stupid_algo.c" "/Users/lvania/42/push_swap/cmake-build-debug/CMakeFiles/push_swap.dir/stupid_algo.c.o"
   )

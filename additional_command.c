@@ -62,3 +62,24 @@ void    to_ascending(int *stack)
         }
     }
 }
+
+int     find_max_idx(int *stack)
+{
+    int     max;
+    int     i;
+    int     idx;
+
+    idx = 1;
+    i = 0;
+    max = stack[1];
+    while (i < stack[0])
+    {
+        if (stack[i] > max)
+        {
+            max = stack[i];
+            idx = i;
+        }
+        i++;
+    }
+    return idx;
+}

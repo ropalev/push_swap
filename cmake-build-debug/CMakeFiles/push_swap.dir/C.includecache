@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/Users/lvania/42/push_swap/additional_command.c
-push_swap.h
-/Users/lvania/42/push_swap/push_swap.h
+/Users/lvania/42/push_swap/libft/get_next_line.h
+libft.h
+/Users/lvania/42/push_swap/libft/libft.h
 
 /Users/lvania/42/push_swap/libft/libft.h
 stdlib.h
@@ -17,6 +17,12 @@ string.h
 -
 unistd.h
 -
+get_next_line.h
+/Users/lvania/42/push_swap/libft/get_next_line.h
+
+/Users/lvania/42/push_swap/main.c
+push_swap.h
+/Users/lvania/42/push_swap/push_swap.h
 
 /Users/lvania/42/push_swap/push_swap.h
 stdarg.h

@@ -40,3 +40,8 @@ int     *stack_b_create(char **argv)
     stack_b[0] = 0;
     return(stack_b);
 }
+
+t_stack stack_init(char **argv)
+{
+
+}

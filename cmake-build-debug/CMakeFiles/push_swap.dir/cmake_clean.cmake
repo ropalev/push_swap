@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/additional_command.c.o"
   "CMakeFiles/push_swap.dir/additional_function.c.o"
+  "CMakeFiles/push_swap.dir/checker.c.o"
   "CMakeFiles/push_swap.dir/command_push.c.o"
   "CMakeFiles/push_swap.dir/command_rotate.c.o"
   "CMakeFiles/push_swap.dir/command_rotate_rev.c.o"
@@ -70,6 +71,9 @@ file(REMOVE_RECURSE
   "CMakeFiles/push_swap.dir/libft/ft_tolower.c.o"
   "CMakeFiles/push_swap.dir/libft/ft_toupper.c.o"
   "CMakeFiles/push_swap.dir/main.c.o"
+  "CMakeFiles/push_swap.dir/parser.c.o"
+  "CMakeFiles/push_swap.dir/smart_algo.c.o"
+  "CMakeFiles/push_swap.dir/sort_func.c.o"
   "CMakeFiles/push_swap.dir/stack_function.c.o"
   "CMakeFiles/push_swap.dir/stupid_algo.c.o"
   "push_swap"

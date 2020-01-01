@@ -9,7 +9,7 @@ void command_sa(int *stack_a)
     tmp = stack_a[1];
     stack_a[1] = stack_a[2];
     stack_a[2] = tmp;
-    write(1, "sa\n", 3);
+    //write(1, "sa\n", 3);
 }
 
 void command_sb(int *stack_b)
@@ -21,7 +21,7 @@ void command_sb(int *stack_b)
     tmp = stack_b[1];
     stack_b[1] = stack_b[2];
     stack_b[2] = tmp;
-    write(1, "sb\n", 3);
+    //write(1, "sb\n", 3);
 }
 
 void command_ss(int *stack_a, int *stack_b)

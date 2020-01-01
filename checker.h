@@ -72,10 +72,4 @@ int     choose_median(t_stack stack);
  */
 void    sort_func(t_stack stack_a, t_stack stack_b);
 void    from_b_to_a(t_stack stack_a, t_stack stack_b);
-
-/*
- *      parser
- */
-
-void     parser(int argc, char **argv);
 #endif

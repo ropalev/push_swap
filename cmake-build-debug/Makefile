@@ -177,6 +177,33 @@ additional_function.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/additional_function.c.s
 .PHONY : additional_function.c.s
 
+checker.o: checker.c.o
+
+.PHONY : checker.o
+
+# target to build an object file
+checker.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.o
+.PHONY : checker.c.o
+
+checker.i: checker.c.i
+
+.PHONY : checker.i
+
+# target to preprocess a source file
+checker.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.i
+.PHONY : checker.c.i
+
+checker.s: checker.c.s
+
+.PHONY : checker.s
+
+# target to generate assembly for a file
+checker.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/checker.c.s
+.PHONY : checker.c.s
+
 command_push.o: command_push.c.o
 
 .PHONY : command_push.o
@@ -2040,6 +2067,87 @@ main.c.s:
 	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/main.c.s
 .PHONY : main.c.s
 
+parser.o: parser.c.o
+
+.PHONY : parser.o
+
+# target to build an object file
+parser.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/parser.c.o
+.PHONY : parser.c.o
+
+parser.i: parser.c.i
+
+.PHONY : parser.i
+
+# target to preprocess a source file
+parser.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/parser.c.i
+.PHONY : parser.c.i
+
+parser.s: parser.c.s
+
+.PHONY : parser.s
+
+# target to generate assembly for a file
+parser.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/parser.c.s
+.PHONY : parser.c.s
+
+smart_algo.o: smart_algo.c.o
+
+.PHONY : smart_algo.o
+
+# target to build an object file
+smart_algo.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/smart_algo.c.o
+.PHONY : smart_algo.c.o
+
+smart_algo.i: smart_algo.c.i
+
+.PHONY : smart_algo.i
+
+# target to preprocess a source file
+smart_algo.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/smart_algo.c.i
+.PHONY : smart_algo.c.i
+
+smart_algo.s: smart_algo.c.s
+
+.PHONY : smart_algo.s
+
+# target to generate assembly for a file
+smart_algo.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/smart_algo.c.s
+.PHONY : smart_algo.c.s
+
+sort_func.o: sort_func.c.o
+
+.PHONY : sort_func.o
+
+# target to build an object file
+sort_func.c.o:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/sort_func.c.o
+.PHONY : sort_func.c.o
+
+sort_func.i: sort_func.c.i
+
+.PHONY : sort_func.i
+
+# target to preprocess a source file
+sort_func.c.i:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/sort_func.c.i
+.PHONY : sort_func.c.i
+
+sort_func.s: sort_func.c.s
+
+.PHONY : sort_func.s
+
+# target to generate assembly for a file
+sort_func.c.s:
+	$(MAKE) -f CMakeFiles/push_swap.dir/build.make CMakeFiles/push_swap.dir/sort_func.c.s
+.PHONY : sort_func.c.s
+
 stack_function.o: stack_function.c.o
 
 .PHONY : stack_function.o
@@ -2109,6 +2217,9 @@ help:
 	@echo "... additional_function.o"
 	@echo "... additional_function.i"
 	@echo "... additional_function.s"
+	@echo "... checker.o"
+	@echo "... checker.i"
+	@echo "... checker.s"
 	@echo "... command_push.o"
 	@echo "... command_push.i"
 	@echo "... command_push.s"
@@ -2316,6 +2427,15 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... parser.o"
+	@echo "... parser.i"
+	@echo "... parser.s"
+	@echo "... smart_algo.o"
+	@echo "... smart_algo.i"
+	@echo "... smart_algo.s"
+	@echo "... sort_func.o"
+	@echo "... sort_func.i"
+	@echo "... sort_func.s"
 	@echo "... stack_function.o"
 	@echo "... stack_function.i"
 	@echo "... stack_function.s"
