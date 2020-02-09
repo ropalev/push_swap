@@ -6,66 +6,71 @@
 /*   By: lvania <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/18 18:31:26 by lvania            #+#    #+#             */
-/*   Updated: 2019/12/31 23:22:40 by lvania           ###   ########.fr       */
+/*   Updated: 2020/02/07 19:36:56 by lvania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int				awesome_function(char **s, char **line)
+static char		*join_free(char *arr, char *buf)
 {
-	int			pos;
-	char		*temp;
+	char	*ret;
+	size_t	len;
 
-	pos = 0;
-	while ((*s)[pos] != '\n' && (*s)[pos] != '\0')
-		pos++;
-	if ((*s)[pos] == '\n')
+	if (!arr || !buf)
+		return (NULL);
+	len = ft_strlen(arr) + ft_strlen(buf);
+	if (!(ret = ft_strnew(len)))
+		return (NULL);
+	ft_strcpy(ret, arr);
+	ft_strcat(ret, buf);
+	free(arr);
+	return (ret);
+}
+
+static int		add_line(char **line, char *buff_line[])
+{
+	char	*temp;
+	size_t	i;
+
+	i = 0;
+	while ((*buff_line)[i] != '\n' && (*buff_line)[i])
+		i++;
+	if ((ft_strchr(*buff_line, '\n')) != NULL)
 	{
-		*line = ft_strsub(*s, 0, pos);
-		temp = ft_strdup(&((*s)[pos + 1]));
-		free(*s);
-		*s = temp;
-		if ((*s)[0] == '\0')
-			ft_strdel(s);
+		*line = ft_strsub(*buff_line, 0, i);
+		temp = ft_strdup(ft_strchr(*buff_line, '\n') + 1);
+		free(*buff_line);
+		*buff_line = temp;
 	}
 	else
 	{
-		*line = ft_strdup(*s);
-		ft_strdel(s);
+		*line = ft_strdup(*buff_line);
+		ft_bzero(*buff_line, i);
 	}
 	return (1);
 }
 
-int				get_result(char **s, char **line, int result, int fd)
-{
-	if (result < 0)
+int				get_next_line(const int fd, char **line) {
+	static char *buff_line[4095];
+	char buf[BUFF_SIZE + 1];
+	int ret;
+
+	if (BUFF_SIZE <= 0 || fd < 0 || fd > 4095 || !(line))
 		return (-1);
-	else if (result == 0 && s[fd] == NULL)
+	while (((ret = read(fd, buf, BUFF_SIZE)) > 0)) {
+		buf[ret] = '\0';
+		if (buff_line[fd] == NULL)
+			buff_line[fd] = ft_strsub(buf, 0, ret);
+		else
+			buff_line[fd] = join_free(buff_line[fd], buf);
+		if (ft_strchr(buff_line[fd], '\n'))
+			break;
+	}
+	if (ret < 0)
+		return (-1);
+	else if ((buff_line[fd] == NULL || buff_line[fd][0] == '\0'))
 		return (0);
 	else
-		return (awesome_function(&s[fd], line));
-}
-
-int				get_next_line(const int fd, char **line)
-{
-	int			result;
-	static char *s[4095];
-	char		buf[BUFF_SIZE + 1];
-	char		*temp;
-
-	if (fd < 0 || line == NULL)
-		return (-1);
-	while ((result = read(fd, buf, BUFF_SIZE)) > 0)
-	{
-		buf[result] = '\0';
-		if (!s[fd])
-			s[fd] = ft_strnew(1);
-		temp = ft_strjoin(s[fd], buf);
-		free(s[fd]);
-		s[fd] = temp;
-		if (ft_strchr(s[fd], '\n'))
-			break ;
-	}
-	return (get_result(s, line, result, fd));
+		return (add_line(line, &buff_line[fd]));
 }

@@ -6,7 +6,7 @@
 /*   By: lvania <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/03 19:00:06 by lvania            #+#    #+#             */
-/*   Updated: 2019/12/31 23:20:40 by lvania           ###   ########.fr       */
+/*   Updated: 2020/02/07 19:35:42 by lvania           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <unistd.h>
 # include "get_next_line.h"
+
 typedef struct		s_list
 {
 	void			*content;
@@ -87,4 +88,5 @@ char				*ft_strupcase(char *str);
 int					ft_tolower(int c);
 int					ft_toupper(int c);
 char				*ft_strjoin(char const *s1, char const *s2);
+void				free_split_str(char ***tab);
 #endif

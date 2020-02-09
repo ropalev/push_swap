@@ -1,31 +1,59 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command_swap.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvania <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/05 15:51:12 by lvania            #+#    #+#             */
+/*   Updated: 2020/02/07 19:30:59 by lvania           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "push_swap.h"
-void command_sa(int *stack_a)
-{
-    int     tmp;
 
-    if (stack_a[0] < 2)
-        return ;
-    tmp = stack_a[1];
-    stack_a[1] = stack_a[2];
-    stack_a[2] = tmp;
-    //write(1, "sa\n", 3);
+void		command_swap(t_stack *stack)
+{
+	t_cell	*top;
+	t_cell	*ptr;
+	int		tmp;
+
+	if (stack->len <= 1)
+		return ;
+	top = stack->head;
+	ptr = top->next;
+	tmp = top->nbr;
+	top->nbr = ptr->nbr;
+	ptr->nbr = tmp;
+	if (stack->prog_name == 'P')
+	{
+		if (stack->name == 'A')
+			write(1, "sa\n", 3);
+		else
+			write(1, "sb\n", 3);
+	}
 }
 
-void command_sb(int *stack_b)
+void		command_swap_ss(t_param *param)
 {
-    int     tmp;
+	t_cell	*top;
+	t_cell	*ptr;
+	int		tmp;
 
-    if (stack_b[0] < 2)
-        return ;
-    tmp = stack_b[1];
-    stack_b[1] = stack_b[2];
-    stack_b[2] = tmp;
-    //write(1, "sb\n", 3);
-}
-
-void command_ss(int *stack_a, int *stack_b)
-{
-    command_sa(stack_a);
-    command_sb(stack_b);
+	if (param->stack_a->len <= 1)
+		return ;
+	top = param->stack_a->head;
+	ptr = top->next;
+	tmp = top->nbr;
+	top->nbr = ptr->nbr;
+	ptr->nbr = tmp;
+	if (param->stack_b->len <= 1)
+		return ;
+	top = param->stack_b->head;
+	ptr = top->next;
+	tmp = top->nbr;
+	top->nbr = ptr->nbr;
+	ptr->nbr = tmp;
+	if (param->prog_name == 'P')
+		write(1, "ss\n", 3);
 }

@@ -1,32 +1,109 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   command_rotate.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: lvania <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/05 15:52:05 by lvania            #+#    #+#             */
+/*   Updated: 2020/02/07 17:52:42 by lvania           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "push_swap.h"
 
-void    command_ra(int *stack_a)
+void		command_rotate(t_stack *stack)
 {
-    int     tmp;
+	t_cell	*ptr;
 
-    if (stack_a[0] < 2)
-        return ;
-    tmp = stack_a[1];
-    shift_up(stack_a);
-    stack_a[stack_a[0]] = tmp;
-   // write(1, "ra\n", 3);
+	if (stack->len <= 1)
+		return ;
+	ptr = stack->head;
+	stack->head = stack->head->next;
+	stack->head->prev = NULL;
+	stack->end->next = ptr;
+	ptr->next = NULL;
+	ptr->prev = stack->end;
+	stack->end = ptr;
+	if (stack->prog_name == 'P')
+	{
+		if (stack->name == 'A')
+			write(1, "ra\n", 3);
+		else
+			write(1, "rb\n", 3);
+	}
 }
 
-void    command_rb(int *stack_b)
+void		command_rr(t_param *param)
 {
-    int     tmp;
+	t_cell	*ptr;
 
-    if (stack_b[0] < 2)
-        return ;
-    tmp = stack_b[1];
-    shift_up(stack_b);
-    stack_b[stack_b[0]] = tmp;
-  //  write(1, "rb\n", 3);
+	if (param->stack_a->len <= 1)
+		return ;
+	ptr = param->stack_a->head;
+	param->stack_a->head = param->stack_a->head->next;
+	param->stack_a->head->prev = NULL;
+	param->stack_a->end->next = ptr;
+	ptr->next = NULL;
+	ptr->prev = param->stack_a->end;
+	param->stack_a->end = ptr;
+	if (param->stack_b->len <= 1)
+		return ;
+	ptr = param->stack_b->head;
+	param->stack_b->head = param->stack_b->head->next;
+	param->stack_b->head->prev = NULL;
+	param->stack_b->end->next = ptr;
+	ptr->next = NULL;
+	ptr->prev = param->stack_b->end;
+	param->stack_b->end = ptr;
+	if (param->prog_name == 'P')
+		write(1, "rr\n", 3);
 }
 
-void    command_rr(int *stack_a, int *stack_b)
+void		command_rev_rotate(t_stack *stack)
 {
-    command_ra(stack_a);
-    command_rb(stack_b);
-    //write(1, "rr\n", 3);
+	t_cell		*ptr;
+
+	if (stack->len <= 1)
+		return ;
+	ptr = stack->end;
+	stack->end = stack->end->prev;
+	stack->end->next = NULL;
+	stack->head->prev = ptr;
+	ptr->next = stack->head;
+	ptr->prev = NULL;
+	stack->head = ptr;
+	if (stack->prog_name == 'P')
+	{
+		if (stack->name == 'A')
+			write(1, "rra\n", 4);
+		else
+			write(1, "rrb\n", 4);
+	}
+}
+
+void		command_rrr(t_param *param)
+{
+	t_cell		*ptr;
+
+	if (param->stack_a->len <= 1)
+		return ;
+	ptr = param->stack_a->end;
+	param->stack_a->end = param->stack_a->end->prev;
+	param->stack_a->end->next = NULL;
+	param->stack_a->head->prev = ptr;
+	ptr->next = param->stack_a->head;
+	ptr->prev = NULL;
+	param->stack_a->head = ptr;
+	if (param->stack_b->len <= 1)
+		return ;
+	ptr = param->stack_b->end;
+	param->stack_b->end = param->stack_b->end->prev;
+	param->stack_b->end->next = NULL;
+	param->stack_b->head->prev = ptr;
+	ptr->next = param->stack_b->head;
+	ptr->prev = NULL;
+	param->stack_b->head = ptr;
+	if (param->prog_name == 'P')
+		write(1, "rrr\n", 4);
 }

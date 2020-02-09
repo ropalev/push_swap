@@ -12,77 +12,73 @@
 
 #include "libft.h"
 
-static	int		num_words(const char *str, char c)
-{
-	int	words;
-	int	i;
-
-	i = 0;
-	words = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-	{
-		if (str[i] == c && str[i + 1] != c)
-			words++;
-		i++;
-	}
-	if (str[0] != '\0')
-		words++;
-	return (words);
-}
-
-static	char	*make_word(const char *str, char c, int *i)
-{
-	char	*s;
-	int		j;
-
-	if (!(s = (char *)malloc(sizeof(s) * (ft_strlen(str)))))
-		return (NULL);
-	j = 0;
-	while (str[*i] != c && str[*i])
-	{
-		s[j] = str[*i];
-		j++;
-		*i += 1;
-	}
-	s[j] = '\0';
-	while (str[*i] == c && str[*i])
-		*i += 1;
-	return (s);
-}
-
-static void		str_del(char **s)
-{
-	while (**s)
-		free(*s++);
-	free(s);
-}
-
-char			**ft_strsplit(const char *str, char c)
+int				ft_wordcounter(const char *str, char c)
 {
 	int		i;
-	int		j;
-	int		words;
-	char	**s;
+	int		wcount;
+	int		state;
 
 	i = 0;
-	j = 0;
-	words = num_words(str, c);
-	if (!str || !(s = (char **)malloc(sizeof(s) * (words + 1))))
-		return (NULL);
-	while (str[i] == c && str[i])
-		i++;
-	while (j < words && str[i])
+	wcount = 0;
+	state = 0;
+	while (str[i])
 	{
-		s[j] = make_word(str, c, &i);
-		if (!s[j])
+		if (c == str[i])
+			state = 0;
+		else if (state == 0)
 		{
-			str_del(s);
-			return (NULL);
+			state = 1;
+			wcount++;
 		}
-		j++;
+		i++;
 	}
-	s[j] = NULL;
-	return (s);
+	return (wcount);
+}
+
+static char		**ft_word_extractor(const char *str,
+									   char **strtab, size_t v[4], char c)
+{
+	while (v[0] <= ft_strlen(str))
+	{
+		if (c == str[v[0]] || str[v[0]] == '\0')
+		{
+			if (v[3] == 1)
+			{
+				strtab[v[1]] = (char*)malloc(sizeof(char) * (v[2] + 1));
+				strtab[v[1]] = ft_strncpy(strtab[v[1]],
+										  str + v[0] - v[2], v[2]);
+				strtab[v[1]][v[2]] = '\0';
+				v[1]++;
+				v[2] = 0;
+				v[3] = 0;
+			}
+		}
+		else
+		{
+			if (v[3] == 0)
+				v[3] = 1;
+			v[2]++;
+		}
+		v[0]++;
+	}
+	strtab[ft_wordcounter(str, c)] = NULL;
+	return (strtab);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**strtab;
+	size_t	v[4];
+
+	if (!s)
+		return (NULL);
+	v[0] = 0;
+	v[1] = 0;
+	v[2] = 0;
+	v[3] = 0;
+	strtab = (char**)malloc(sizeof(*strtab) * (ft_wordcounter(s, c) + 1));
+	if (!strtab)
+		return (NULL);
+	strtab = ft_word_extractor(s, strtab, v, c);
+	return (strtab);
 }
